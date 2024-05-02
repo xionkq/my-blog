@@ -15,9 +15,18 @@ const config: Config = {
       },
       maxWidth: {
         'large': '1216px',
-      }
+      },
+      fontSize: {
+        'banner': '240px'
+      },
+      colors: {
+        'blog-card-purple': '#6941C6',
+        'blog-card-gray': '#667085',
+      },
     },
   },
+  // TODO: refactor blog label color config
+  safelist: ['text-[#6941C6]', 'text-[#363F72]', 'bg-[#6941C6]/[.10]', 'bg-[#363F72]/[.10]'],
   plugins: [],
 };
 export default config;
