@@ -1,3 +1,8 @@
+![avatar](public/robin-building.png)
+
+“This still have a lot of work to do”
+— Robin
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
