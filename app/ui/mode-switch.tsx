@@ -1,11 +1,11 @@
 'use client'
 
-import {Icon} from "@iconify/react";
-import {useState} from "react";
+import { Icon } from '@iconify/react'
+import { useState } from 'react'
 
 enum Mode {
   LIGHT,
-  DARK
+  DARK,
 }
 
 export default function ModeSwitch() {
@@ -15,8 +15,13 @@ export default function ModeSwitch() {
     setMode(mode === Mode.LIGHT ? Mode.DARK : Mode.LIGHT)
   }
   return (
-    <button className="flex items-center px-4 h-10 bg-black rounded-full text-white relative" onClick={handleClick}>
-      <div className={`rounded-full bg-white h-6 w-6 absolute transition-all ${left}`}></div>
+    <button
+      className="flex items-center px-4 h-10 bg-black rounded-full text-white relative"
+      onClick={handleClick}
+    >
+      <div
+        className={`rounded-full bg-white h-6 w-6 absolute transition-all ${left}`}
+      ></div>
       <Icon className="text-2xl mr-4" icon="tdesign:mode-light" />
       <Icon className="text-2xl" icon="tdesign:mode-dark" />
     </button>
