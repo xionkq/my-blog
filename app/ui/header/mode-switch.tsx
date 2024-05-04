@@ -27,7 +27,7 @@ export default function ModeSwitch() {
   }
   return (
     <button
-      className="flex items-center px-4 h-10 bg-black rounded-full text-white relative dark:bg-white"
+      className="flex items-center px-4 h-10 bg-black rounded-full text-white relative dark:bg-white w-24"
       onClick={handleClick}
     >
       <div className={`rounded-full bg-white h-6 w-6 absolute transition-all ${left} dark:bg-black`}></div>

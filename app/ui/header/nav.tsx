@@ -1,4 +1,4 @@
-import ModeSwitch from '@/app/ui/mode-switch'
+import ModeSwitch from '@/app/ui/header/mode-switch'
 
 function NavItem({ text }: { text: string }) {
   return <div className="p-2 mr-3.5">{text}</div>
