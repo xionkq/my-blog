@@ -17,8 +17,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="dark">
-      <body className={`${inter.className} dark:bg-black`}>
+    <html lang="en">
+      <body className={`${inter.className} bg-img-light dark:bg-img-black`}>
         <div className="mx-auto max-w-large min-h-screen text-black dark:text-white">
           <Header />
           <main className="mt-[50px]">{children}</main>

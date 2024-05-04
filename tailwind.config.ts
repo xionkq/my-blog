@@ -11,8 +11,8 @@ const config: Config = {
   theme: {
     extend: {
       backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'img-light': 'linear-gradient(to bottom, transparent, rgb(255, 255, 255)) rgb(214, 219, 220)',
+        'img-black': 'linear-gradient(to bottom, #000000, #000000)',
       },
       // TODO: reduce the use of custom values
       maxWidth: {

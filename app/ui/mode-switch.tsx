@@ -4,15 +4,26 @@ import { Icon } from '@iconify/react'
 import { useState } from 'react'
 
 enum Mode {
-  LIGHT,
-  DARK,
+  LIGHT = 'light',
+  DARK = 'dark',
+}
+
+// TODO: use LocalStorage
+function switchTheme(mode: Mode) {
+  const htmlRoot = document.documentElement
+  htmlRoot.removeAttribute('class')
+  htmlRoot.classList.add(mode)
 }
 
 export default function ModeSwitch() {
   const [mode, setMode] = useState<Mode>(Mode.LIGHT)
   const left = mode === Mode.DARK ? 'left-14' : 'left-4'
+
+  // TODO: use switch animation
   const handleClick = () => {
-    setMode(mode === Mode.LIGHT ? Mode.DARK : Mode.LIGHT)
+    const newMode = mode === Mode.LIGHT ? Mode.DARK : Mode.LIGHT
+    setMode(newMode)
+    switchTheme(newMode)
   }
   return (
     <button
