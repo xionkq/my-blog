@@ -1,9 +1,5 @@
 {
   // TODO: lint and prettier run together in one command
-  "extends": [
-    "next/core-web-vitals",
-    "prettier",
-    "plugin:prettier/recommended"
-  ],
+  "extends": ["next/core-web-vitals", "prettier", "plugin:prettier/recommended"],
   "plugins": ["prettier"]
 }

@@ -16,14 +16,12 @@ export default function ModeSwitch() {
   }
   return (
     <button
-      className="flex items-center px-4 h-10 bg-black rounded-full text-white relative"
+      className="flex items-center px-4 h-10 bg-black rounded-full text-white relative dark:bg-white"
       onClick={handleClick}
     >
-      <div
-        className={`rounded-full bg-white h-6 w-6 absolute transition-all ${left}`}
-      ></div>
-      <Icon className="text-2xl mr-4" icon="tdesign:mode-light" />
-      <Icon className="text-2xl" icon="tdesign:mode-dark" />
+      <div className={`rounded-full bg-white h-6 w-6 absolute transition-all ${left} dark:bg-black`}></div>
+      <Icon className="text-2xl mr-4 dark:text-black" icon="tdesign:mode-light" />
+      <Icon className="text-2xl dark:text-black" icon="tdesign:mode-dark" />
     </button>
   )
 }

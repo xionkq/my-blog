@@ -33,22 +33,19 @@ function BlogContent() {
 function BlogCard() {
   const createTime = 'Alec Whitten • 1 Jan 2023'
   const title = 'Bill Walsh leadership lessons'
-  const intro =
-    'Like to know the secrets of transforming a 2-14 team into a 3x Super Bowl winning Dynasty?'
+  const intro = 'Like to know the secrets of transforming a 2-14 team into a 3x Super Bowl winning Dynasty?'
   return (
     <div className="w-[384px]">
       <div>
         <Image width={384} height={240} src="/blog-image.png" alt="img" />
       </div>
       <div className="mt-8">
-        <p className="text-sm text-card-purple font-semibold">
-          {createTime}
-        </p>
+        <p className="text-sm text-card-purple font-semibold">{createTime}</p>
         <h2 className="mt-3 text-2xl font-semibold flex justify-between items-center">
           {title}
           <Icon className="text-2xl" icon="tdesign:arrow-right-up" />
         </h2>
-        <p className="mt-3 text-card-gray">{intro}</p>
+        <p className="mt-3 text-card-gray dark:text-card-gray-dark">{intro}</p>
       </div>
       <div className="mt-6">
         <Label label={BlogLabel.LEADERSHIP} />
