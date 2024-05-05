@@ -12,9 +12,8 @@ const config: Config = {
     extend: {
       backgroundImage: {
         'img-light': 'linear-gradient(to bottom, transparent, rgb(255, 255, 255)) rgb(214, 219, 220)',
-        'img-black': 'linear-gradient(to bottom, #000000, #000000)',
+        'img-black': 'linear-gradient(to bottom, #090D1F, #090D1F)',
       },
-      // TODO: reduce the use of custom values
       maxWidth: {
         large: '1280px',
       },
@@ -29,6 +28,10 @@ const config: Config = {
       },
       backgroundColor: {
         black: '#090D1F',
+      },
+      borderColor: {
+        'driver-gray': '#EAECF0',
+        'driver-gray-dark': '#EAECF034',
       },
     },
   },

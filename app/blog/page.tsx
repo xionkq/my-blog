@@ -17,9 +17,9 @@ export default function Blog() {
 
 function BlogContent() {
   return (
-    <div className="mt-[60px] px-8">
+    <div className="mt-16 px-8">
       <h2 className="text-2xl font-semibold">All blog posts</h2>
-      <div className="my-8 grid grid-cols-3 gap-x-8 gap-y-12 border-b pb-[30px] border-[#EAECF0]">
+      <div className="my-8 grid grid-cols-3 gap-x-8 gap-y-12 border-b pb-8 border-driver-gray dark:border-driver-gray-dark">
         <BlogCard />
         <BlogCard />
         <BlogCard />
@@ -35,7 +35,7 @@ function BlogCard() {
   const title = 'Bill Walsh leadership lessons'
   const intro = 'Like to know the secrets of transforming a 2-14 team into a 3x Super Bowl winning Dynasty?'
   return (
-    <div className="w-[384px]">
+    <div className="w-96">
       <div>
         <Image width={384} height={240} src="/blog-image.png" alt="img" />
       </div>
