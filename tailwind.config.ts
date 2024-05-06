@@ -10,6 +10,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      height: {
+        18: '72px',
+      },
       backgroundImage: {
         'img-light': 'linear-gradient(to bottom, transparent, rgb(255, 255, 255)) rgb(214, 219, 220)',
         'img-black': 'linear-gradient(to bottom, #090D1F, #090D1F)',
