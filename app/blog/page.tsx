@@ -19,7 +19,7 @@ function BlogContent() {
   return (
     <div className="mt-16 px-8">
       <h2 className="text-2xl font-semibold">All blog posts</h2>
-      <div className="my-8 grid grid-cols-3 gap-x-8 gap-y-12 border-b pb-8 border-driver-gray dark:border-driver-gray-dark">
+      <div className="my-8 grid grid-cols-2 gap-x-8 gap-y-12 border-b pb-8 border-gray dark:border-gray-dark xl:grid-cols-3">
         <BlogCard />
         <BlogCard />
         <BlogCard />

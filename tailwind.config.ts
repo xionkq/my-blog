@@ -30,8 +30,8 @@ const config: Config = {
         black: '#090D1F',
       },
       borderColor: {
-        'driver-gray': '#EAECF0',
-        'driver-gray-dark': '#EAECF034',
+        gray: '#EAECF0',
+        'gray-dark': '#EAECF034',
       },
     },
   },

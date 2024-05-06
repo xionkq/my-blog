@@ -2,6 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+html::-webkit-scrollbar {
+  width: 8px;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: #b0b0b0;
+  border-radius: 4px;
+}
+
+html.dark::-webkit-scrollbar-thumb {
+  background: #494949;
+}
+
+html.dark::-webkit-scrollbar-track {
+  background-color: #090D1F;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
