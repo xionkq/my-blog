@@ -2,6 +2,7 @@
 
 import ModeSwitch from '@/app/ui/header/mode-switch'
 import { Icon } from '@iconify/react'
+import { useState } from 'react'
 
 export default function Header() {
   return (
@@ -13,33 +14,70 @@ export default function Header() {
 }
 
 function NavItem({ text }: { text: string }) {
-  return <div className="p-2 mr-3.5">{text}</div>
+  return <div className="p-2">{text}</div>
 }
 
+const nav = [
+  {
+    name: 'Blog',
+  },
+  {
+    name: 'Projects',
+  },
+  {
+    name: 'About',
+  },
+  {
+    name: 'Newsletter',
+  },
+]
+
 function Nav() {
-  const nav = [
-    {
-      name: 'Blog',
-    },
-    {
-      name: 'Projects',
-    },
-    {
-      name: 'About',
-    },
-    {
-      name: 'Newsletter',
-    },
-  ]
+  const [isDrawerShow, setIsDrawerShow] = useState(false)
+
+  const handleClick = () => {
+    if (isDrawerShow) {
+      const bodyElement = document.body
+      bodyElement.style.overflow = 'visible'
+    } else {
+      const bodyElement = document.body
+      bodyElement.style.overflow = 'hidden'
+    }
+    setIsDrawerShow(!isDrawerShow)
+  }
   return (
     <>
       <div className="hidden items-center md:flex">
         {nav.map((item, index) => {
-          return <NavItem text={item.name} key={index} />
+          return (
+            <div className="mr-3.5" key={index}>
+              <NavItem text={item.name} />
+            </div>
+          )
         })}
         <ModeSwitch />
       </div>
-      <Icon className="text-3xl dark:text-black md:hidden" icon="tdesign:view-list" />
+      <Icon className="text-3xl dark:text-black md:hidden" icon="tdesign:view-list" onClick={handleClick} />
+      <Drawer isShow={isDrawerShow} handle={handleClick} />
     </>
+  )
+}
+
+function Drawer({ isShow, handle }: { isShow: boolean; handle: () => void }) {
+  const show = isShow ? '' : 'hidden'
+  return (
+    <div className={`fixed top-0 left-0 h-full w-full flex justify-center items-center backdrop-blur-2xl bg-white/75 dark:bg-black/75 ${show}`}>
+      <div className="flex flex-col items-center">
+        <div className="mb-14 font-semibold" onClick={handle}>xion’s blog</div>
+        {nav.map((item, index) => {
+          return (
+            <div className="mb-5" key={index}>
+              <NavItem text={item.name} />
+            </div>
+          )
+        })}
+        <ModeSwitch />
+      </div>
+    </div>
   )
 }
