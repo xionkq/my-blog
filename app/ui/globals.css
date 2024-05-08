@@ -16,7 +16,7 @@ html.dark::-webkit-scrollbar-thumb {
 }
 
 html.dark::-webkit-scrollbar-track {
-  background-color: #090D1F;
+  background-color: #090d1f;
 }
 
 @layer utilities {

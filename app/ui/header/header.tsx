@@ -13,10 +13,6 @@ export default function Header() {
   )
 }
 
-function NavItem({ text }: { text: string }) {
-  return <div className="p-2">{text}</div>
-}
-
 const nav = [
   {
     name: 'Blog',
@@ -31,6 +27,10 @@ const nav = [
     name: 'Newsletter',
   },
 ]
+
+function NavItem({ text }: { text: string }) {
+  return <div className="p-2">{text}</div>
+}
 
 function Nav() {
   const [isDrawerShow, setIsDrawerShow] = useState(false)
@@ -57,18 +57,21 @@ function Nav() {
         })}
         <ModeSwitch />
       </div>
-      <Icon className="text-3xl dark:text-black md:hidden" icon="tdesign:view-list" onClick={handleClick} />
+      <Icon className="text-3xl text-black dark:text-white md:hidden" icon="tdesign:view-list" onClick={handleClick} />
       <Drawer isShow={isDrawerShow} handle={handleClick} />
     </>
   )
 }
 
+// TODO: use animation
 function Drawer({ isShow, handle }: { isShow: boolean; handle: () => void }) {
   const show = isShow ? '' : 'hidden'
   return (
-    <div className={`fixed top-0 left-0 h-full w-full flex justify-center items-center backdrop-blur-2xl bg-white/75 dark:bg-black/75 ${show}`}>
+    <div
+      className={`fixed top-0 left-0 h-full w-full flex justify-center items-center backdrop-blur-2xl bg-white/75 dark:bg-black/75 ${show}`}
+    >
       <div className="flex flex-col items-center">
-        <div className="mb-14 font-semibold" onClick={handle}>xion’s blog</div>
+        <div className="mb-14 font-semibold">xion’s blog</div>
         {nav.map((item, index) => {
           return (
             <div className="mb-5" key={index}>
@@ -78,6 +81,7 @@ function Drawer({ isShow, handle }: { isShow: boolean; handle: () => void }) {
         })}
         <ModeSwitch />
       </div>
+      <Icon className="absolute bottom-5 text-3xl text-black dark:text-white" icon="tdesign:close" onClick={handle} />
     </div>
   )
 }

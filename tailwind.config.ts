@@ -21,7 +21,7 @@ const config: Config = {
         large: '1280px',
       },
       fontSize: {
-        banner: '240px',
+        banner: '40px',
       },
       colors: {
         'card-purple': '#6941C6',
