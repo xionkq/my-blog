@@ -6,7 +6,7 @@ import { useState } from 'react'
 
 export default function Header() {
   return (
-    <div className="h-18 px-5 flex justify-between items-center text-lg/6 md:h-20 lg:h-32 lg:px-8 lg:text-xl/6">
+    <div className="h-18 px-5 mb-4 flex justify-between items-center text-lg/6 md:h-20 lg:h-32 lg:px-8 lg:text-xl/6">
       <div className="font-semibold">xion’s blog</div>
       <Nav />
     </div>

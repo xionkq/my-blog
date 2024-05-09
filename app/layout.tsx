@@ -21,7 +21,9 @@ export default function RootLayout({
       <body className={`${inter.className} bg-img-light dark:bg-img-black`}>
         <div className="mx-auto max-w-large min-h-screen text-black dark:text-white">
           <Header />
-          <main className="mt-4">{children}</main>
+          <main className="min-h-[calc(100vh-344px)] lg:min-h-[calc(100vh-224px)] md:min-h-[calc(100vh-176px)]">
+            {children}
+          </main>
           <Footer />
         </div>
       </body>
