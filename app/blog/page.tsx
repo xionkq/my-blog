@@ -19,7 +19,7 @@ function BlogContent() {
   return (
     <div className="mt-16 px-8">
       <h2 className="text-2xl font-semibold">All blog posts</h2>
-      <div className="my-8 grid grid-cols-2 gap-x-8 gap-y-12 border-b pb-8 border-gray dark:border-gray-dark xl:grid-cols-3">
+      <div className="my-8 grid grid-cols-1 gap-x-8 gap-y-12 border-b pb-8 border-gray dark:border-gray-dark lg:grid-cols-3 md:grid-cols-2">
         <BlogCard />
         <BlogCard />
         <BlogCard />
@@ -34,8 +34,9 @@ function BlogCard() {
   const createTime = 'Alec Whitten • 1 Jan 2023'
   const title = 'Bill Walsh leadership lessons'
   const intro = 'Like to know the secrets of transforming a 2-14 team into a 3x Super Bowl winning Dynasty?'
+
   return (
-    <div className="w-96">
+    <div className="max-w-96 mx-auto">
       <div>
         <Image width={384} height={240} src="/blog-image.png" alt="img" />
       </div>
