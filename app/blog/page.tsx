@@ -17,9 +17,9 @@ export default function Blog() {
 
 function BlogContent() {
   return (
-    <div className="mt-16 px-8">
+    <div className="mt-16 mb-8 px-8">
       <h2 className="text-2xl font-semibold">All blog posts</h2>
-      <div className="my-8 grid grid-cols-1 gap-x-8 gap-y-12 border-b pb-8 border-gray dark:border-gray-dark lg:grid-cols-3 md:grid-cols-2">
+      <div className="mt-8 grid grid-cols-1 gap-x-8 gap-y-12 border-b pb-8 border-gray dark:border-gray-dark lg:grid-cols-3 md:grid-cols-2">
         <BlogCard />
         <BlogCard />
         <BlogCard />
