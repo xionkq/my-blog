@@ -1,7 +1,7 @@
 'use client'
 
 import ModeSwitch from '@/app/ui/header/mode-switch'
-import { Icon } from '@iconify/react'
+import { Icon } from '@iconify-icon/react'
 import { useState } from 'react'
 
 export default function Header() {

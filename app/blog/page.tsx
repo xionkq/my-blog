@@ -1,8 +1,6 @@
-'use client'
-
 import Banner from '@/app/ui/banner'
 import Image from 'next/image'
-import { Icon } from '@iconify/react'
+import { Icon } from '@iconify-icon/react'
 import Label from '@/app/ui/label'
 import { BlogLabel } from '@/app/lib/label'
 
