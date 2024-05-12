@@ -27,4 +27,4 @@ GitHub Pages 固然方便，但相对它们也有一些缺点。
 | GitHub Pages     | 1             |
 | Cloudflare Pages | 1             |
 | Vercel           | 3             |
-| Netlify           |              |
+| Netlify          |               |
