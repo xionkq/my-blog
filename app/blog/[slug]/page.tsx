@@ -2,6 +2,8 @@ import matter from 'gray-matter'
 import { remark } from 'remark'
 import html from 'remark-html'
 import path from 'node:path'
+// TODO: add more default styles
+import utilsStyle from '@/app/ui/utils.module.css'
 
 const ERROR_MESSAGE_NOT_FOUND = 'error not found'
 
@@ -19,11 +21,11 @@ export default async function Page({ params }: { params: { slug: string } }) {
   }
 
   return (
-    <>
+    <article className={utilsStyle.post}>
       <h2>{post.metaData.title}</h2>
       <p>{post.metaData.date?.toString()}</p>
       <div dangerouslySetInnerHTML={{ __html: post.content }}></div>
-    </>
+    </article>
   )
 }
 

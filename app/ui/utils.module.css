@@ -1,0 +1,118 @@
+.post {
+
+}
+
+/* h1-h6 标题样式 */
+.post h1 {
+    display: block;
+    font-size: 2em;
+    margin-top: 0.67em;
+    margin-bottom: 0.67em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+
+.post h2 {
+    display: block;
+    font-size: 1.5em;
+    margin-top: 0.83em;
+    margin-bottom: 0.83em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+
+.post h3 {
+    display: block;
+    font-size: 1.17em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+
+.post h4 {
+    display: block;
+    margin-top: 1.33em;
+    margin-bottom: 1.33em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+
+.post h5 {
+    display: block;
+    font-size: 0.83em;
+    margin-top: 1.67em;
+    margin-bottom: 1.67em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+
+.post h6 {
+    display: block;
+    font-size: 0.67em;
+    margin-top: 2.33em;
+    margin-bottom: 2.33em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+
+/* 段落样式 */
+.post p {
+    display: block;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* 列表样式 */
+.post ul {
+    display: block;
+    list-style-type: disc;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 40px;
+}
+
+.post ol {
+    display: block;
+    list-style-type: decimal;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 40px;
+}
+
+.post li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+
+.post a {
+    color: #007bff; /* 默认链接颜色为蓝色 */
+    text-decoration: underline; /* 默认链接有下划线 */
+    background-color: transparent; /* 默认背景透明 */
+    -webkit-text-decoration-skip: objects; /* 避免链接下划线穿过嵌入对象 */
+}
+
+.post a:visited {
+    color: #4e2a8e; /* 访问过的链接颜色为紫色 */
+}
+
+.post a:hover {
+    color: #0056b3; /* 鼠标悬停时链接颜色变为深蓝色 */
+    text-decoration: underline; /* 鼠标悬停时显示下划线 */
+}
+
+.post a:active {
+    color: #0056b3; /* 激活链接时链接颜色变为深蓝色 */
+}
