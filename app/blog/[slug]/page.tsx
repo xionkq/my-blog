@@ -4,6 +4,7 @@ import html from 'remark-html'
 import path from 'node:path'
 // TODO: add more default styles
 import utilsStyle from '@/app/ui/utils.module.css'
+import NotFound from '@/app/not-found'
 
 const ERROR_MESSAGE_NOT_FOUND = 'error not found'
 
@@ -17,7 +18,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
   const post = await getPostInfoBySlug(params.slug)
 
   if (post === ERROR_MESSAGE_NOT_FOUND) {
-    return <div>404</div>
+    return <NotFound />
   }
 
   return (
