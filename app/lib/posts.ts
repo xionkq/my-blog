@@ -14,10 +14,11 @@ export interface PostMetaData {
   title?: string
   date?: Date
   updated?: string
+  hidden?: boolean
 }
 
 export interface PostMetaDataWithId extends PostMetaData {
-  id: string,
+  id: string
 }
 
 const postsDirectory = path.join(process.cwd(), 'app/blog/(posts)')
@@ -38,15 +39,14 @@ export function getSortedPosts(): PostMetaDataWithId[] {
     }
   })
 
-  const postsMetaData = allPostsData.filter((item) => item !== null) as PostMetaDataWithId[]
+  const postsMetaData = allPostsData.filter((item) => item !== null && !item.hidden) as PostMetaDataWithId[]
 
   return postsMetaData.sort((a, b) => {
-      if (!a.date || !b.date) {
-        return !b.date ? -1 : 1
-      }
-
-      return a.date < b.date ? 1 : -1
-    })
+    if (!a.date || !b.date) {
+      return !b.date ? -1 : 1
+    }
+    return a.date < b.date ? 1 : -1
+  })
 }
 
 export function getPotMatterById(id: string): PostMeta | null {
@@ -62,7 +62,7 @@ export function getPotMatterById(id: string): PostMeta | null {
 export async function getPostInfoBySlug(slug: string) {
   try {
     const matterResult = getPotMatterById(slug)
-    if (!matterResult) {
+    if (!matterResult || matterResult.data.hidden) {
       throw ErrorMessage.ERROR_MESSAGE_NOT_FOUND
     }
     const processedContent = await remark().use(html).process(matterResult.content)

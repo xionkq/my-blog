@@ -22,7 +22,7 @@ function BlogContent() {
       <h2 className="text-2xl font-semibold">All blog posts</h2>
       <div className="mt-8 grid grid-cols-1 gap-x-8 gap-y-12 border-b pb-8 border-gray dark:border-gray-dark lg:grid-cols-3 md:grid-cols-2">
         {posts.map((post) => {
-          return <BlogCard postMeta={post} />
+          return <BlogCard postMeta={post} key={post.id} />
         })}
         <BlogCardDemo />
       </div>
