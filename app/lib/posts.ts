@@ -10,17 +10,21 @@ interface PostMeta {
   data: PostMetaData
 }
 
-interface PostMetaData {
+export interface PostMetaData {
   title?: string
   date?: Date
   updated?: string
 }
 
+export interface PostMetaDataWithId extends PostMetaData {
+  id: string,
+}
+
 const postsDirectory = path.join(process.cwd(), 'app/blog/(posts)')
 
-export function getSortedPosts() {
+export function getSortedPosts(): PostMetaDataWithId[] {
   const fileNames = fs.readdirSync(postsDirectory)
-  const allPostsData: (PostMetaData | null)[] = fileNames.map((file) => {
+  const allPostsData: (PostMetaDataWithId | null)[] = fileNames.map((file) => {
     const id = file.replace(/\.md$/, '')
     const matterResult = getPotMatterById(id)
 
@@ -28,14 +32,15 @@ export function getSortedPosts() {
       return null
     } else {
       return {
+        id,
         ...matterResult.data,
       }
     }
   })
 
-  return allPostsData
-    .filter((item) => item !== null)
-    .sort((a, b) => {
+  const postsMetaData = allPostsData.filter((item) => item !== null) as PostMetaDataWithId[]
+
+  return postsMetaData.sort((a, b) => {
       if (!a.date || !b.date) {
         return !b.date ? -1 : 1
       }
