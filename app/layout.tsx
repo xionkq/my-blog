@@ -3,7 +3,6 @@ import { Inter } from 'next/font/google'
 import './ui/globals.css'
 import Header from '@/app/ui/header/header'
 import Footer from '@/app/ui/footer'
-import { getPosts } from '@/app/lib/posts'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -17,8 +16,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  // TODO: exposed to the blog component
-  getPosts()
   return (
     <html lang="en">
       <body className={`${inter.className} bg-img-light dark:bg-img-black`}>

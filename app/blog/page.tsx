@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { Icon } from '@iconify-icon/react'
 import Label from '@/app/ui/label'
 import { BlogLabel } from '@/app/lib/label'
+import { getSortedPosts } from '@/app/lib/posts'
 
 export default function Blog() {
   return (
@@ -14,6 +15,7 @@ export default function Blog() {
 }
 
 function BlogContent() {
+  console.log(getSortedPosts())
   return (
     <div className="mt-16 mb-8 px-8">
       <h2 className="text-2xl font-semibold">All blog posts</h2>
