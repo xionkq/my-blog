@@ -3,6 +3,8 @@
 import ModeSwitch from '@/app/ui/header/mode-switch'
 import { Icon } from '@iconify-icon/react'
 import { useState } from 'react'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 export default function Header() {
   return (
@@ -16,24 +18,38 @@ export default function Header() {
 const nav = [
   {
     name: 'Blog',
+    href: '/blog',
   },
   {
     name: 'Projects',
+    href: '/projects',
   },
   {
     name: 'About',
+    href: '/about',
   },
   {
-    name: 'Newsletter',
+    name: 'News',
+    href: '/news',
   },
 ]
 
-function NavItem({ text }: { text: string }) {
-  return <div className="p-2">{text}</div>
+function NavItem({ pathname, text, href }: { pathname: string; text: string; href: string }) {
+  const isActive = pathname === href
+
+  // TODO: remove layout effects
+  return (
+    <div className={`text-center p-2 border-b-2 ${isActive ? 'font-bold border-black' : 'border-transparent'}`}>
+      <Link className={``} href={href}>
+        {text}
+      </Link>
+    </div>
+  )
 }
 
 function Nav() {
   const [isDrawerShow, setIsDrawerShow] = useState(false)
+  const pathname = usePathname()
 
   const handleClick = () => {
     if (isDrawerShow) {
@@ -51,7 +67,7 @@ function Nav() {
         {nav.map((item, index) => {
           return (
             <div className="mr-3.5" key={index}>
-              <NavItem text={item.name} />
+              <NavItem pathname={pathname} text={item.name} href={item.href} />
             </div>
           )
         })}
@@ -65,7 +81,9 @@ function Nav() {
 
 // TODO: use animation
 function Drawer({ isShow, handle }: { isShow: boolean; handle: () => void }) {
+  const pathname = usePathname()
   const show = isShow ? '' : 'hidden'
+
   return (
     <div
       className={`fixed top-0 left-0 h-full w-full flex justify-center items-center backdrop-blur-2xl bg-white/75 dark:bg-black/75 ${show}`}
@@ -75,7 +93,7 @@ function Drawer({ isShow, handle }: { isShow: boolean; handle: () => void }) {
         {nav.map((item, index) => {
           return (
             <div className="mb-5" key={index}>
-              <NavItem text={item.name} />
+              <NavItem pathname={pathname} text={item.name} href={item.href} />
             </div>
           )
         })}
