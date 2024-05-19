@@ -3,6 +3,7 @@ import { getAllLabelClass } from './app/lib/label'
 
 const config: Config = {
   darkMode: 'selector',
+  important: true,
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',

@@ -8,12 +8,12 @@ import { usePathname } from 'next/navigation'
 
 export default function Header() {
   return (
-    <div className="h-18 px-5 mb-4 flex justify-between items-center text-lg/6 md:h-20 lg:h-32 lg:px-8 lg:text-xl/6">
+    <header className="h-18 px-5 mb-4 flex justify-between items-center text-lg/6 md:h-20 lg:h-32 lg:px-8 lg:text-xl/6">
       <Link className="font-semibold" href="/">
         xion’s blog
       </Link>
       <Nav />
-    </div>
+    </header>
   )
 }
 

@@ -12,10 +12,10 @@ export default async function Page({ params }: { params: { slug: string } }) {
   }
 
   return (
-    <article className={utilsStyle.post}>
-      <h2>{post.metaData.title}</h2>
-      <p>{post.metaData.date?.toDateString()}</p>
-      <div dangerouslySetInnerHTML={{ __html: post.content }}></div>
-    </article>
+    <div className={`max-w-4xl mx-auto pt-10 ${utilsStyle.post}`}>
+      <h1 className="mb-1 mt-0">{post.metaData.title}</h1>
+      <span className="text-slate-400">{post.metaData.date?.toDateString()}</span>
+      <article className="mt-10 text-slate-700" dangerouslySetInnerHTML={{ __html: post.content }}></article>
+    </div>
   )
 }
