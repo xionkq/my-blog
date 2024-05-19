@@ -31,7 +31,7 @@ function BlogContent() {
 }
 
 function BlogCard({ postMeta }: { postMeta: PostMetaDataWithId }) {
-  const createTime = postMeta.date?.toString()
+  const createTime = postMeta.date?.toDateString()
   const title = postMeta.title
   const intro = 'Like to know the secrets of transforming a 2-14 team into a 3x Super Bowl winning Dynasty?'
 

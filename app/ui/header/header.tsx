@@ -9,7 +9,9 @@ import { usePathname } from 'next/navigation'
 export default function Header() {
   return (
     <div className="h-18 px-5 mb-4 flex justify-between items-center text-lg/6 md:h-20 lg:h-32 lg:px-8 lg:text-xl/6">
-      <div className="font-semibold">xion’s blog</div>
+      <Link className="font-semibold" href="/">
+        xion’s blog
+      </Link>
       <Nav />
     </div>
   )
@@ -40,9 +42,7 @@ function NavItem({ pathname, text, href }: { pathname: string; text: string; hre
   // TODO: remove layout effects
   return (
     <div className={`text-center p-2 border-b-2 ${isActive ? 'font-bold border-black' : 'border-transparent'}`}>
-      <Link className={``} href={href}>
-        {text}
-      </Link>
+      <Link href={href}>{text}</Link>
     </div>
   )
 }

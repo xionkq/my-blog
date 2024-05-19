@@ -14,7 +14,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
   return (
     <article className={utilsStyle.post}>
       <h2>{post.metaData.title}</h2>
-      <p>{post.metaData.date?.toString()}</p>
+      <p>{post.metaData.date?.toDateString()}</p>
       <div dangerouslySetInnerHTML={{ __html: post.content }}></div>
     </article>
   )
