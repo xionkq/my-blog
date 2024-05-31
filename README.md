@@ -1,4 +1,3 @@
-![avatar](public/robin-building.png)
+## My Blog
 
-“There is still a lot of work to do.”
-— Robin
+This is my blog for sharing techniques and recording interesting ideas.
