@@ -2,7 +2,6 @@ import path from 'node:path'
 import fs from 'fs'
 import matter from 'gray-matter'
 import { ErrorMessage } from '@/app/lib/error-message'
-import 'highlight.js/styles/default.css'
 import { markdownToHtml } from '@/app/lib/utils'
 
 interface PostMeta {
@@ -27,7 +26,7 @@ export function getSortedPosts(): PostMetaDataWithId[] {
   const fileNames = fs.readdirSync(postsDirectory)
   const allPostsData: (PostMetaDataWithId | null)[] = fileNames.map((file) => {
     const id = file.replace(/\.md$/, '')
-    const matterResult = getPotMatterById(id)
+    const matterResult = getPostMatterById(id)
 
     if (!matterResult) {
       return null
@@ -49,7 +48,7 @@ export function getSortedPosts(): PostMetaDataWithId[] {
   })
 }
 
-export function getPotMatterById(id: string): PostMeta | null {
+function getPostMatterById(id: string): PostMeta | null {
   try {
     const fullPath = path.join(postsDirectory, `${id}.md`)
     return matter.read(fullPath) as PostMeta
@@ -61,7 +60,7 @@ export function getPotMatterById(id: string): PostMeta | null {
 
 export async function getPostInfoBySlug(slug: string) {
   try {
-    const matterResult = getPotMatterById(slug)
+    const matterResult = getPostMatterById(slug)
     if (!matterResult || matterResult.data.hidden) {
       throw ErrorMessage.ERROR_MESSAGE_NOT_FOUND
     }

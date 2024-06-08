@@ -1,5 +1,6 @@
 // TODO: add more default styles
 import utilsStyle from '@/app/ui/utils.module.css'
+import 'highlight.js/styles/default.css'
 import NotFound from '@/app/not-found'
 import { getPostInfoBySlug } from '@/app/lib/posts'
 import { ErrorMessage } from '@/app/lib/error-message'
