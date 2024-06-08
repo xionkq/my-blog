@@ -13,7 +13,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
   }
 
   return (
-    <div className={`max-w-4xl mx-auto pt-10 ${utilsStyle.post}`}>
+    <div className={`max-w-4xl mx-auto py-10 ${utilsStyle.post}`}>
       <h1 className="mb-1 mt-0">{post.metaData.title}</h1>
       <span className="text-slate-400">{post.metaData.date?.toDateString()}</span>
       <article className="mt-10 text-slate-700" dangerouslySetInnerHTML={{ __html: post.content }}></article>

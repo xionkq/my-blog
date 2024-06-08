@@ -115,3 +115,11 @@
 .post a:active {
   color: #0056b3; /* 激活链接时链接颜色变为深蓝色 */
 }
+
+.post blockquote {
+  margin: 1em 0;
+  padding: 0.5em 10px;
+  border-left: 10px solid #ccc; /* 有些浏览器可能有左边框 */
+  background: #f9f9f9;
+  font-style: italic;
+}
