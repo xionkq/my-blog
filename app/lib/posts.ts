@@ -1,9 +1,9 @@
 import path from 'node:path'
 import fs from 'fs'
 import matter from 'gray-matter'
-import { remark } from 'remark'
-import html from 'remark-html'
 import { ErrorMessage } from '@/app/lib/error-message'
+import 'highlight.js/styles/default.css'
+import { markdownToHtml } from '@/app/lib/utils'
 
 interface PostMeta {
   content: string
@@ -65,7 +65,7 @@ export async function getPostInfoBySlug(slug: string) {
     if (!matterResult || matterResult.data.hidden) {
       throw ErrorMessage.ERROR_MESSAGE_NOT_FOUND
     }
-    const processedContent = await remark().use(html).process(matterResult.content)
+    const processedContent = await markdownToHtml(matterResult.content)
 
     return {
       metaData: matterResult.data as PostMetaData,
