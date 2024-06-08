@@ -12,7 +12,7 @@ updated: 2024-05-06 18:31:00
 
 > @property CSS at-rule是CSS Houdini API 的一部分，它允许开发者显式地定义他们的CSS 自定义属性, 允许进行属性类型检查、设定默认值以及定义该自定义属性是否可以被继承。
 
-使用`@property`注册的属性在css中属于[自定义属性](https://developer.mozilla.org/zh-CN/docs/Web/CSS/--*)，可通过`var()`函数引用（说是属性，其实更像是一个值，我第一反应还以为可以自定义[语法](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Syntax)中的属性）。我们可以通过`@property`创建两个颜色属性
+使用 `@property` 注册的属性在css中属于[自定义属性](https://developer.mozilla.org/zh-CN/docs/Web/CSS/--*)，可通过 `var()` 函数引用（说是属性，其实更像是一个值，我第一反应还以为可以自定义[语法](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Syntax)中的属性）。我们可以通过 `@property` 创建两个颜色属性
 
 ```css
 @property --color-light {
@@ -27,11 +27,11 @@ updated: 2024-05-06 18:31:00
 }
 ```
 
-需要注意的是，当`syntax`属性指定为`"<color>"`时，`initial-value`值只能是合法颜色，而不是三个数字值代表的颜色变量。
+需要注意的是，当 `syntax` 属性指定为 `"<color>"` 时，`initial-value` 值只能是合法颜色，而不是三个数字值代表的颜色变量。
 
 ## 使用渐变
 
-接下来就可以在渐变中使用所定义的颜色属性，并使用`transition`属性定义`--color-light`和`--color-dark`颜色如何过渡，当颜色改变时即可看到过渡效果。
+接下来就可以在渐变中使用所定义的颜色属性，并使用 `transition` 属性定义 `--color-light` 和 `--color-dark` 颜色如何过渡，当颜色改变时即可看到过渡效果。
 
 ```css
 .btn {

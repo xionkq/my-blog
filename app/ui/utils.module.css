@@ -123,3 +123,10 @@
   background: #f9f9f9;
   font-style: italic;
 }
+
+.post code {
+  background-color: #eee;
+  border-radius: 3px;
+  font-family: courier, monospace;
+  padding: 0 3px;
+}
