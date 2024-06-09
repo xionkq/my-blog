@@ -11,6 +11,8 @@ interface PostMeta {
 
 export interface PostMetaData {
   title?: string
+  excerpt?: string
+  cover?: string
   date?: Date
   updated?: string
   hidden?: boolean

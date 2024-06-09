@@ -33,20 +33,32 @@ function BlogContent() {
 function BlogCard({ postMeta }: { postMeta: PostMetaDataWithId }) {
   const createTime = postMeta.date?.toDateString()
   const title = postMeta.title
-  const intro = 'Like to know the secrets of transforming a 2-14 team into a 3x Super Bowl winning Dynasty?'
+  const defaultExcerpt =
+    'Like to know the secrets of transforming aLike to know the secrets of transforming a 2-14 team into a 3x Super Bowl winning Dynasty?'
+  const excerpt = postMeta.excerpt || defaultExcerpt
+  const cover = postMeta.cover || '/blog-image.png'
 
   return (
-    <div className="max-w-96 mx-auto">
-      <div>
-        <Image width={384} height={240} src="/blog-image.png" alt="img" />
+    <div className="max-w-96 mx-auto w-full">
+      <div className="w-full aspect-[16/10] relative">
+        <Image
+          src={cover}
+          fill={true}
+          style={{
+            objectFit: 'cover',
+          }}
+          alt="img"
+        />
       </div>
       <div className="mt-8">
         <p className="text-sm text-card-purple font-semibold">{createTime}</p>
         <Link className="mt-3 text-2xl font-semibold flex justify-between items-center" href={`/blog/${postMeta.id}`}>
-          {title}
+          <div className="truncate" title={title}>
+            {title}
+          </div>
           <Icon className="text-2xl" icon="tdesign:arrow-right-up" />
         </Link>
-        <p className="mt-3 text-card-gray dark:text-card-gray-dark">{intro}</p>
+        <p className="h-12 mt-3 text-card-gray line-clamp-2 dark:text-card-gray-dark">{excerpt}</p>
       </div>
       <div className="mt-6">
         <Label label={BlogLabel.LEADERSHIP} />

@@ -1,5 +1,4 @@
 ---
-cover: https://fastly.jsdelivr.net/gh/YunYouJun/cdn/img/bg/girl-in-water-tank.webp
 title: Hello, Valaxy!
 date: 2022-03-22
 updated: 2022-03-23 15:00:00

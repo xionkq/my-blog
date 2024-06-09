@@ -1,6 +1,8 @@
 ---
+cover: /post/content-with-border.png
 title: 使用mask实现带圆角的渐变色边框
 date: 2024-05-09 19:36:08
+excerpt: 最近在项目中想要实现带圆角的渐变色边框，但是通过 `border-image` 或者before伪元素做底色实现后都不满意，直到查到到CSS中的mask属性，与其他方案相比可实现圆角、透明底，同时兼容性很好，感觉唯一缺点是仍然需要使用到伪元素，可能可读性不是很好。
 ---
 
 最近在项目中想要实现带圆角的渐变色边框，但是通过 `border-image` 或者before伪元素做底色实现后都不满意，直到查到到CSS中的 [`mask`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/mask) 属性，与其他方案相比可实现圆角、透明底，同时兼容性很好，感觉唯一缺点是仍然需要使用到伪元素，可能可读性不是很好。`mask` 作为2023年的Baseline，意味着目前所有主流浏览器都支持它，[查看浏览器兼容](https://caniuse.com/?search=CSS%20Masks)。
