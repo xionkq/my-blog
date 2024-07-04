@@ -1,8 +1,8 @@
 ---
 title: 使用@property实现渐变过渡
 excerpt: 在现代网页开发中，我们经常会使用渐变色作为主题色或是仅用于按钮等元素的背景色，但在CSS中渐变所使用的是CSS Images Module规范，实际是被当作图片使用，因此截至目前所有浏览器均不支持渐变使用transition过渡。
-date: 2024-05-07 17:32:00
-updated: 2024-05-06 18:31:00
+date: 2024-06-07 17:32:00
+updated: 2024-06-06 18:31:00
 ---
 
 在现代网页开发中，我们经常会使用渐变色作为主题色或是仅用于按钮等元素的背景色，但在CSS中渐变所使用的是[CSS Images Module](https://drafts.csswg.org/css-images-4/#linear-gradients)规范，实际是被当作图片使用，因此截至目前所有浏览器均不支持渐变使用transition过渡。当然想要实现还是有办法的，例如使用@property规则。
