@@ -9,9 +9,10 @@
     "lint": "next lint --fix && prettier --write --ignore-unknown ."
   },
   "dependencies": {
+    "github-markdown-css": "^5.8.1",
     "gray-matter": "^4.0.3",
     "highlight.js": "^11.9.0",
-    "next": "14.2.3",
+    "next": "15.1.2",
     "react": "^18",
     "react-dom": "^18",
     "rehype-highlight": "^7.0.0",

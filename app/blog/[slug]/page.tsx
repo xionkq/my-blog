@@ -1,5 +1,6 @@
-// TODO: add more default styles
-import utilsStyle from '@/app/ui/utils.module.css'
+// TODO: make my own md style in the future
+// import utilsStyle from '@/app/ui/utils.module.css'
+import 'github-markdown-css/github-markdown.css'
 import 'highlight.js/styles/default.css'
 import NotFound from '@/app/not-found'
 import { getPostInfoBySlug } from '@/app/lib/posts'
@@ -13,7 +14,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
   }
 
   return (
-    <div className={`max-w-4xl mx-auto py-10 ${utilsStyle.post}`}>
+    <div className={`max-w-4xl mx-auto py-10 markdown-body`}>
       <h1 className="mb-1 mt-0">{post.metaData.title}</h1>
       <span className="text-slate-400">{post.metaData.date?.toDateString()}</span>
       <article className="mt-10 text-slate-700" dangerouslySetInnerHTML={{ __html: post.content }}></article>
