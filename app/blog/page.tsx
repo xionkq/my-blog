@@ -31,7 +31,7 @@ function BlogContent() {
 }
 
 function BlogCard({ postMeta }: { postMeta: PostMetaDataWithId }) {
-  const createTime = postMeta.date?.toDateString()
+  const createTime = postMeta.date?.toLocaleString('zh-CN', { timeZone: 'UTC' })
   const title = postMeta.title
   const defaultExcerpt =
     'Like to know the secrets of transforming aLike to know the secrets of transforming a 2-14 team into a 3x Super Bowl winning Dynasty?'

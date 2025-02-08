@@ -86,7 +86,7 @@ function Drawer({ isShow, handle }: { isShow: boolean; handle: () => void }) {
 
   return (
     <div
-      className={`fixed top-0 left-0 h-full w-full flex justify-center items-center backdrop-blur-2xl bg-white/75 dark:bg-black/75 ${show}`}
+      className={`z-10 fixed top-0 left-0 h-full w-full flex justify-center items-center backdrop-blur-2xl bg-white/75 dark:bg-black/75 ${show}`}
     >
       <div className="flex flex-col items-center">
         <div className="mb-14 font-semibold">xion’s blog</div>
