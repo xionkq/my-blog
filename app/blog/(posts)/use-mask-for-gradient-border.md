@@ -2,6 +2,7 @@
 cover: /post/content-with-border.png
 title: 使用mask实现带圆角的渐变色边框
 date: 2024-06-09 19:36:08
+update: 2025-05-22 22:40:34
 excerpt: 最近在项目中想要实现带圆角的渐变色边框，但是通过 `border-image` 或者before伪元素做底色实现后都不满意，直到查到到CSS中的mask属性，与其他方案相比可实现圆角、透明底，同时兼容性很好，感觉唯一缺点是仍然需要使用到伪元素，可能可读性不是很好。
 ---
 
@@ -101,6 +102,22 @@ mask属性类似于background是一个简写属性，具体可查看[MDN mask](h
 
 ![content with border](/post/content-with-border.png)
 
-## 总结
+## 其他
 
-不知道怎么总结。。。
+除此之外，想要通过单标签实现渐变圆角边框，还可以使用双层背景，这对于无法使用伪元素的[可替换元素](https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_images/Replaced_element_properties)很有用（例如 `input`）。
+
+```css
+input {
+  box-sizing: border-box;
+  border-radius: 16px;
+  border: 10px solid transparent;
+  outline: unset !important;
+  padding: 0 12px;
+  height: 48px;
+  background:
+      linear-gradient(white, white) padding-box,
+      linear-gradient(yellow, green) border-box;
+}
+```
+
+![input with border](/post/input-with-border.png)
